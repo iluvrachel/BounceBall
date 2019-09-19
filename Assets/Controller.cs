@@ -102,7 +102,7 @@ public class Controller : MonoBehaviour
             {
                 // push the ball with a force according to drag distance
                 Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
-                rb.AddForce(offset*Time.deltaTime*15000.0f); 
+                rb.AddForce(offset*Time.deltaTime*8000.0f); 
                 isMouseDown = false;
                 
                 //transform.position += offset;
