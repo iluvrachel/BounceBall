@@ -24,12 +24,15 @@ public class Controller : MonoBehaviour
 
     private Vector3 target;
 
+    private Vector3 original_scale;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>(); //Rigidbody of Player
         circle = gameObject.GetComponent<CircleCollider2D>(); // Collider of Player
         //parent = transform.gameObject; // 
+        original_scale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class Controller : MonoBehaviour
             if(clickpoint_dis < Math.Pow(circle.radius*rb.transform.localScale.x,2)) // click inside the ball
             {
                 lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Time.timeScale = 0.1f; //slow motion
+                Time.timeScale = 0.05f; //slow motion
                 Time.fixedDeltaTime = 0.02F*Time.timeScale; // frame smooth
                 
                 isMouseDown = true;
@@ -77,19 +80,29 @@ public class Controller : MonoBehaviour
             v.z = 0;
             Quaternion rotation = Quaternion.FromToRotation(Vector3.up, v);
             transform.rotation = rotation;
+
+            //Change the shape of the ball when pressing
+             
+            float shape_offset = (float)(0.0005*aim.value);
+
+            transform.localScale = original_scale - new Vector3(0,shape_offset,0);
+
+            
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            //release
+            //release & restore every value
             Time.timeScale = 1.0f;
             Time.fixedDeltaTime = 0.02F*Time.timeScale; 
             aim.value = 0;
+            transform.localScale = original_scale;
+
             if (lastMousePosition != Vector3.zero && isMouseDown)
             {
                 // push the ball with a force according to drag distance
                 Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
-                rb.AddForce(offset*Time.deltaTime*10000.0f); 
+                rb.AddForce(offset*Time.deltaTime*15000.0f); 
                 isMouseDown = false;
                 
                 //transform.position += offset;
