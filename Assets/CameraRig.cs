@@ -22,7 +22,7 @@ public class CameraRig : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         // camera follow
         targetPos = player.transform.position + offset; 

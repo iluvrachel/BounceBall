@@ -7,6 +7,7 @@ using System;
 public class Controller : MonoBehaviour
 {
     private bool isMouseDown = false;
+    private bool isRelease = false;
     private Vector3 lastMousePosition = Vector3.zero; // Mouse up position
     private Vector3 MousePosition = Vector3.zero; // Current mouse position
     private Vector3 rb_Position = Vector3.zero;
@@ -33,6 +34,8 @@ public class Controller : MonoBehaviour
         circle = gameObject.GetComponent<CircleCollider2D>(); // Collider of Player
         //parent = transform.gameObject; // 
         original_scale = transform.localScale;
+
+        rb.drag = 0.1f;
     }
 
     // Update is called once per frame
@@ -41,6 +44,10 @@ public class Controller : MonoBehaviour
         OnClick();
     }
 
+    void FixedUpdate() 
+    {
+        Release();    
+    }
     /**
      * @description: Mouse click listener, to control the Player ball movement
      * @param {type} 
@@ -100,9 +107,7 @@ public class Controller : MonoBehaviour
 
             if (lastMousePosition != Vector3.zero && isMouseDown)
             {
-                // push the ball with a force according to drag distance
-                Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
-                rb.AddForce(offset*Time.deltaTime*8000.0f); 
+                isRelease = true;
                 isMouseDown = false;
                 
                 //transform.position += offset;
@@ -111,6 +116,16 @@ public class Controller : MonoBehaviour
         }
     }
 
+    private void Release()
+    {
+        if(isRelease)
+        {
+                // push the ball with a force according to drag distance
+                Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
+                rb.AddForce(offset*20.0f); 
+                isRelease = false;
+        }
+    }
 
     // private void Create()
     // {
