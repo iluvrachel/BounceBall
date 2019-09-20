@@ -61,16 +61,20 @@ public class Controller : MonoBehaviour
             MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb_Position = rb.position;
             // distance between clickpoint and rigidbody
-            clickpoint_dis = Math.Pow((MousePosition.x-rb_Position.x),2)+Math.Pow((MousePosition.y-rb_Position.y),2);
-            if(clickpoint_dis < Math.Pow(circle.radius*rb.transform.localScale.x,2)) // click inside the ball
-            {
-                lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Time.timeScale = 0.05f; //slow motion
-                Time.fixedDeltaTime = 0.02F*Time.timeScale; // frame smooth
+            // clickpoint_dis = Math.Pow((MousePosition.x-rb_Position.x),2)+Math.Pow((MousePosition.y-rb_Position.y),2);
+            // if(clickpoint_dis < Math.Pow(circle.radius*rb.transform.localScale.x,2)) // click inside the ball
+            // {
+            //     lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //     Time.timeScale = 0.05f; //slow motion
+            //     Time.fixedDeltaTime = 0.02F*Time.timeScale; // frame smooth
                 
-                isMouseDown = true;
-                //Create();
-            }
+            //     isMouseDown = true;
+            //     //Create();
+            // }
+            lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Time.timeScale = 0.05f; //slow motion
+            Time.fixedDeltaTime = 0.02F*Time.timeScale; // frame smooth
+            isMouseDown = true;
             
         }
 
@@ -122,7 +126,7 @@ public class Controller : MonoBehaviour
         {
                 // push the ball with a force according to drag distance
                 Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
-                rb.AddForce(offset*20.0f); 
+                rb.AddForce(offset*15.0f); 
                 isRelease = false;
         }
     }
