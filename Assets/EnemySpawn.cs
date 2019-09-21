@@ -25,7 +25,7 @@ public class EnemySpawn : MonoBehaviour
 
         float distToGo = Mathf.Floor(distance - distanceUsed);
 
-        if (distanceUsed < distance && distToGo > 1.0f)
+        if (distanceUsed < distance && distToGo > 0.6f)
         {
             distanceUsed = distance;
             Spawn();

@@ -124,15 +124,17 @@ public class Controller : MonoBehaviour
     {
         if(isRelease)
         {
-                // push the ball with a force according to drag distance
-                Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
-                // Limit the force
-                if (offset.x > 6.0f) offset.x = 6.0f;
-                if (offset.x < -6.0f) offset.x = -6.0f;
-                if (offset.y > 6.0f) offset.y = 6.0f;
-                if (offset.y < -6.0f) offset.y = -6.0f;
-                rb.AddForce(offset*15.0f); 
-                isRelease = false;
+            // clear velocity to follow the correct track 
+            rb.velocity = new Vector2(0f,0f);
+            // push the ball with a force according to drag distance
+            Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
+            // Limit the force
+            if (offset.x > 6.0f) offset.x = 6.0f;
+            if (offset.x < -6.0f) offset.x = -6.0f;
+            if (offset.y > 6.0f) offset.y = 6.0f;
+            if (offset.y < -6.0f) offset.y = -6.0f;
+            rb.AddForce(offset*15.0f); 
+            isRelease = false;
         }
     }
 
