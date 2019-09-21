@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
             col.enabled = false;
             ps.Play();            
             Destroy(gameObject,6);
+            ScoreManager.score += 100;
         }
     }
 }
