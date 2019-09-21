@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
         ps = gameObject.GetComponent<ParticleSystem>();
         sr = gameObject.GetComponent<SpriteRenderer>(); 
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+
         healthBar.value = healthBar.maxValue;
         ps.Stop();
     }
@@ -63,6 +65,9 @@ public class PlayerHealth : MonoBehaviour
         // stay still
         rb.velocity = Vector2.zero;
         rb.gravityScale = 0f;
+        gameObject.GetComponent<Controller>().enabled = false;
+        gameObject.GetComponent<TrailRenderer>().enabled = false;
+        gameObject.GetComponent<EnemySpawn>().enabled = false;
         //transform.position = finalPos;
         // explode
         ps.Play();
