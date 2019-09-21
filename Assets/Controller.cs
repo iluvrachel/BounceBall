@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
     private Vector3 MousePosition = Vector3.zero; // Current mouse position
     private Vector3 rb_Position = Vector3.zero;
     private Rigidbody2D rb;
-    private double clickpoint_dis = 0.0; // Mouse down position
+    //private double clickpoint_dis = 0.0; // Mouse down position
     private CircleCollider2D circle;
 
     //public GameObject m_prefab; 
@@ -126,6 +126,11 @@ public class Controller : MonoBehaviour
         {
                 // push the ball with a force according to drag distance
                 Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition)- rb_Position;
+                // Limit the force
+                if (offset.x > 6.0f) offset.x = 6.0f;
+                if (offset.x < -6.0f) offset.x = -6.0f;
+                if (offset.y > 6.0f) offset.y = 6.0f;
+                if (offset.y < -6.0f) offset.y = -6.0f;
                 rb.AddForce(offset*15.0f); 
                 isRelease = false;
         }
