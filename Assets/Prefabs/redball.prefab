@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1292248591638810344}
   m_Layer: 0
   m_Name: redball
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,8 +257,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 500
-      minScalar: 300
+      scalar: 100
+      minScalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -373,7 +373,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
+      scalar: 1
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -3876,7 +3876,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.5
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
