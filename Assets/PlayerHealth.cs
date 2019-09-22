@@ -8,13 +8,18 @@ public class PlayerHealth : MonoBehaviour
     private ParticleSystem ps;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
-    private bool isAlive = true;
+    public static bool isAlive = true;
     private Vector3 finalPos = Vector3.zero;
 
     public Slider healthBar;
     // Start is called before the first frame update
     void Start()
     {
+        // rb.gravityScale = 0.5f;
+        // gameObject.GetComponent<Controller>().enabled = true;
+        // gameObject.GetComponent<TrailRenderer>().enabled = true;
+        // gameObject.GetComponent<EnemySpawn>().enabled = true;
+        isAlive = true; //THIS IS NECESSARY!!! FK IT..
         ps = gameObject.GetComponent<ParticleSystem>();
         sr = gameObject.GetComponent<SpriteRenderer>(); 
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -22,6 +27,11 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.value = healthBar.maxValue;
         ps.Stop();
+    }
+
+    void Awake()
+    {
+
     }
 
     // Update is called once per frame
@@ -38,14 +48,14 @@ public class PlayerHealth : MonoBehaviour
             Die();
             isAlive = false;
         }
-        if (isAlive)
-        {
-            finalPos = transform.position;
-        }
-        else
-        {
-            transform.position = finalPos;
-        }
+        // if (isAlive)
+        // {
+        //     finalPos = transform.position;
+        // }
+        // else
+        // {
+        //     transform.position = finalPos;
+        // }
 
     }
 
