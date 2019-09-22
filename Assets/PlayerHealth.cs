@@ -12,6 +12,9 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 finalPos = Vector3.zero;
 
     public Slider healthBar;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.value = healthBar.maxValue;
         ps.Stop();
+        
+       
     }
 
     void Awake()
@@ -81,6 +86,7 @@ public class PlayerHealth : MonoBehaviour
         //transform.position = finalPos;
         // explode
         ps.Play();
+        
 
         //Destroy(gameObject);
     }

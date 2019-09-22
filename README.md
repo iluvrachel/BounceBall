@@ -18,5 +18,9 @@ An imitation of 12h Game Challenge https://youtu.be/mFNrOGPVls0
 9h49m: score counter
 
 11h34m: game over
+
 There was a tiny stupid bug but i coundn't figure it out utill now, which wasted me nearly 2h
+
 Anyway, at least the game is roughly playable now :)
+
+12h13m: sound effects

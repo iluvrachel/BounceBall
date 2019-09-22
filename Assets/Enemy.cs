@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer sr;
     private CircleCollider2D col;
 
+    public AudioSource explosionAudio;
+
     // private bool once = true;
     //private collider
     // Start is called before the first frame update
@@ -17,6 +19,8 @@ public class Enemy : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>(); 
         col =  gameObject.GetComponent<CircleCollider2D>(); 
         ps.Stop();
+
+        explosionAudio = GetComponent<AudioSource> ();
     }
 
     // Update is called once per frame
@@ -28,7 +32,8 @@ public class Enemy : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag=="Player")
         {
-
+            //print("hit");
+            explosionAudio.Play();
             sr.enabled = false;
             col.enabled = false;
             ps.Play();            

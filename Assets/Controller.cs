@@ -27,6 +27,8 @@ public class Controller : MonoBehaviour
 
     private Vector3 original_scale;
 
+    public AudioSource shootingAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class Controller : MonoBehaviour
         original_scale = transform.localScale;
 
         rb.drag = 0.1f;
+
+        shootingAudio = GetComponent<AudioSource> ();
     }
 
     // Update is called once per frame
@@ -134,6 +138,9 @@ public class Controller : MonoBehaviour
             if (offset.y > 6.0f) offset.y = 6.0f;
             if (offset.y < -6.0f) offset.y = -6.0f;
             rb.AddForce(offset*15.0f); 
+
+            shootingAudio.Play();
+
             isRelease = false;
         }
     }
