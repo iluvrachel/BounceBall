@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     private GameObject gm;
     private GameObject player;
 
-    public AudioSource dieAudio;
+
     //private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class GameOver : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
 
-        dieAudio = GetComponent<AudioSource> ();
+        //dieAudio = GetComponent<AudioSource> ();
         
     }
 
@@ -31,7 +31,7 @@ public class GameOver : MonoBehaviour
         {
             gm.SetActive(true);
             //PlayerHealth.isAlive = true;
-            dieAudio.Play();
+            //dieAudio.Play();
         }
     }
 

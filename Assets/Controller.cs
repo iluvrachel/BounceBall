@@ -29,6 +29,8 @@ public class Controller : MonoBehaviour
 
     public AudioSource shootingAudio;
 
+    public AudioSource[] AudioClips = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class Controller : MonoBehaviour
 
         rb.drag = 0.1f;
 
-        shootingAudio = GetComponent<AudioSource> ();
+        shootingAudio = AudioClips[0];
     }
 
     // Update is called once per frame

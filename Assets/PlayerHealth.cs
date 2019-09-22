@@ -13,8 +13,9 @@ public class PlayerHealth : MonoBehaviour
 
     public Slider healthBar;
 
-    
+    public AudioSource[] AudioClips = null;
 
+    public AudioSource dieAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.value = healthBar.maxValue;
         ps.Stop();
         
+        dieAudio = AudioClips[1];
        
     }
 
@@ -86,7 +88,7 @@ public class PlayerHealth : MonoBehaviour
         //transform.position = finalPos;
         // explode
         ps.Play();
-        
+        dieAudio.Play();
 
         //Destroy(gameObject);
     }
