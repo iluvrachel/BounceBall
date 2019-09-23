@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
             explosionAudio.Play();
             sr.enabled = false;
             col.enabled = false;
-            ps.Play();            
+            ps.Play();
             Destroy(gameObject,6);
             ScoreManager.score += 100;
         }

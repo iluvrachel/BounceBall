@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
         {
 
             healthBar.value += 15f;   
+            CameraRig.isHit = true;
 
         }
     }
