@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject creeper;
+    //public GameObject enemy;
 
     private float distance;
     private float distanceUsed;
@@ -34,8 +36,22 @@ public class EnemySpawn : MonoBehaviour
 
     private void Spawn()
     {
+        GameObject enemyToSpawn = enemyType();
         float yPos = Mathf.Floor(Mathf.Abs(UnityEngine.Random.Range(0f,1f) - UnityEngine.Random.Range(0f,1f)) * (1 + 100 - (-2)) + (-2));
         Vector3 posToSpawnEnemy = new Vector3(distance,yPos,0f);
-        Instantiate(enemy,posToSpawnEnemy,Quaternion.identity);
+        Instantiate(enemyToSpawn,posToSpawnEnemy,Quaternion.identity);
+    }
+
+    private GameObject enemyType()
+    {
+        float rand = UnityEngine.Random.Range(0f,1f);
+        if(rand>0.2f)
+        {
+            return enemy;
+        }
+        else
+        {
+            return creeper;
+        }
     }
 }

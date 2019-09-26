@@ -26,3 +26,5 @@ Anyway, at least the game is roughly playable now :)
 12h13m: sound effects
 
 12h40m: camera shake
+
+12h58m: add creeper & modify the ball bounciness
