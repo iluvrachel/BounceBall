@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     public AudioSource explosionAudio;
 
+    private bool isVis = true;
+    private int timer = 0;
     // private bool once = true;
     //private collider
     // Start is called before the first frame update
@@ -26,7 +28,19 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!isVis)
+        {
+            timer++;
+            //print(timer);
+        }
+        else
+        {
+            timer = 0;
+        }
+        if(timer==300)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other) 
@@ -42,4 +56,15 @@ public class Enemy : MonoBehaviour
             ScoreManager.score += 100;
         }
     }
+
+    private void OnBecameVisible() 
+    {
+        isVis = true;
+    }
+
+    private void OnBecameInvisible() 
+    {
+        isVis = false;
+    } 
+
 }
