@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Creeper : MonoBehaviour
 {
-    public Slider healthBar;
+    //public Slider healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,7 @@ public class Creeper : MonoBehaviour
             //ps.Play();
             //Destroy(gameObject,6);
             //ScoreManager.score += 100;
-            healthBar.value = healthBar.minValue;
+            //healthBar.value = healthBar.minValue;
 
         }
     }

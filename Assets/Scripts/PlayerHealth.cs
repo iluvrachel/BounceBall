@@ -75,6 +75,14 @@ public class PlayerHealth : MonoBehaviour
             CameraRig.isHit = true;
 
         }
+        if(other.gameObject.tag=="Creeper")
+        {
+
+            healthBar.value = healthBar.minValue;   
+            CameraRig.isHit = true;
+
+        }
+
     }
 
     private void Die()
