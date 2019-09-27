@@ -29,4 +29,4 @@ Anyway, at least the game is roughly playable now :)
 
 12h58m: add creeper & modify the ball bounciness
 
-13h20m: add purple ball
+13h20m: add purple ball & adjust the rebounce mechanism

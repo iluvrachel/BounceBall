@@ -71,7 +71,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.tag=="Enemy")
         {
-
+            Vector3 up = new Vector3(0f,1f,0f);
+            rb.AddForce(up*50f);
             healthBar.value += 15f;   
             CameraRig.isHit = true;
 

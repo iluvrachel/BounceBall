@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         col =  gameObject.GetComponent<CircleCollider2D>(); 
         ps.Stop();
 
-        explosionAudio = GetComponent<AudioSource> ();
+        explosionAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,7 +29,8 @@ public class Enemy : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
+    void OnCollisionEnter2D(Collision2D other) 
+    {
         if(other.gameObject.tag=="Player")
         {
             //print("hit");
