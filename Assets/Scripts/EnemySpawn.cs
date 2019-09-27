@@ -6,6 +6,7 @@ public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject creeper;
+    public GameObject purple;
     //public GameObject enemy;
 
     private float distance;
@@ -48,6 +49,10 @@ public class EnemySpawn : MonoBehaviour
         if(rand>0.2f)
         {
             return enemy;
+        }
+        else if(rand>0.05f)
+        {
+            return purple;
         }
         else
         {

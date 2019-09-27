@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource[] AudioClips = null;
 
     public AudioSource dieAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +80,13 @@ public class PlayerHealth : MonoBehaviour
         {
 
             healthBar.value = healthBar.minValue;   
+            CameraRig.isHit = true;
+
+        }
+        if(other.gameObject.tag=="Purple")
+        {
+            Vector3 direction = new Vector3(UnityEngine.Random.Range(0f,1f),UnityEngine.Random.Range(0f,1f),UnityEngine.Random.Range(0f,1f));
+            rb.AddForce(direction*UnityEngine.Random.Range(100f,200f));
             CameraRig.isHit = true;
 
         }
