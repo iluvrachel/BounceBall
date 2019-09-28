@@ -31,6 +31,7 @@ public class Controller : MonoBehaviour
 
     public AudioSource[] AudioClips = null;
 
+    public static int releaseSign = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,8 @@ public class Controller : MonoBehaviour
         rb.drag = 0.1f;
 
         shootingAudio = AudioClips[0];
+
+        releaseSign = 0;
     }
 
     // Update is called once per frame
@@ -119,7 +122,7 @@ public class Controller : MonoBehaviour
             {
                 isRelease = true;
                 isMouseDown = false;
-                
+
                 //transform.position += offset;
             }
             //lastMousePosition = Vector3.zero;
@@ -144,6 +147,26 @@ public class Controller : MonoBehaviour
             shootingAudio.Play();
 
             isRelease = false;
+
+            releaseSign += 1;
+            if(releaseSign == 2)
+            {
+                releaseSign = 0;
+                Combo.comboCount = 0;
+                Enemy.hitSign = false;
+            }
+            
+            // if(Enemy.hitSign)
+            // {
+            //     releaseSign += 1;
+            //     Enemy.hitSign = false;
+            // }
+            // else
+            // {
+            //     releaseSign = 0;
+            //     Combo.comboCount = 0;
+            // }
+            //releaseSign = true;
         }
     }
 

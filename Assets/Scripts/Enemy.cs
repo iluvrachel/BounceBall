@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
 
     private bool isVis = true;
     private int timer = 0;
+
+    public static bool hitSign = false;
+    
     // private bool once = true;
     //private collider
     // Start is called before the first frame update
@@ -23,6 +26,9 @@ public class Enemy : MonoBehaviour
         ps.Stop();
 
         explosionAudio = GetComponent<AudioSource>();
+
+        hitSign = false;
+        //releaseSign = 0;
     }
 
     // Update is called once per frame
@@ -41,19 +47,34 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        // if(Controller.releaseSign==0)
+        // {
+        //     Combo.comboCount = 0;
+        //     //hitSign = false;
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.gameObject.tag=="Player")
         {
+
+            hitSign = true;
+            Combo.comboCount += 1;
+            Controller.releaseSign = 0;
             //print("hit");
             explosionAudio.Play();
             sr.enabled = false;
             col.enabled = false;
             ps.Play();
             Destroy(gameObject,6);
-            ScoreManager.score += 100;
+            ScoreManager.score += Combo.comboCount*100;
+
+
+
+ 
+
+            //Combo.comboCount += 1;
         }
     }
 
