@@ -91,7 +91,13 @@ public class PlayerHealth : MonoBehaviour
             CameraRig.isHit = true;
 
         }
+        if(other.gameObject.tag=="Healer")
+        {
 
+            healthBar.value = healthBar.maxValue;   
+            CameraRig.isHit = true;
+
+        }
 
     }
 

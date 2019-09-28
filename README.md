@@ -33,4 +33,4 @@ Anyway, at least the game is roughly playable now :)
 
 13h36m: entities off screen despawn
 
-14h09m: add combo mechanism
+14h18m: add combo mechanism & add healer

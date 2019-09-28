@@ -7,6 +7,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemy;
     public GameObject creeper;
     public GameObject purple;
+    public GameObject healer;
     //public GameObject enemy;
 
     private float distance;
@@ -46,17 +47,21 @@ public class EnemySpawn : MonoBehaviour
     private GameObject enemyType()
     {
         float rand = UnityEngine.Random.Range(0f,1f);
-        if(rand>0.2f)
+        if(rand>0.25f)
         {
             return enemy;
         }
-        else if(rand>0.05f)
+        else if(rand>0.1f)
         {
             return purple;
         }
-        else
+        else if(rand>0.05f)
         {
             return creeper;
+        }
+        else
+        {
+            return healer;
         }
     }
 }
