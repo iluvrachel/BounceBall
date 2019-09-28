@@ -34,3 +34,8 @@ Anyway, at least the game is roughly playable now :)
 13h36m: entities off screen despawn
 
 14h18m: add combo mechanism & add healer
+
+
+## TODO
+- Blackhole
+- fix the aimer bug
