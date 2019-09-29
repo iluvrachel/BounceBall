@@ -28,6 +28,13 @@ public class CameraRig : MonoBehaviour
         isHit = false;
     }
 
+    void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -70,5 +77,10 @@ public class CameraRig : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x,yMin,transform.position.z);
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

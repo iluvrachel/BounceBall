@@ -680,7 +680,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5878,11 +5878,11 @@ RectTransform:
   m_Father: {fileID: 1223512792}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -326, y: 197.95}
-  m_SizeDelta: {x: 198.4, y: 40.9}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 22, y: -20.6}
+  m_SizeDelta: {x: 198.4, y: 40.899994}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1920856403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6200,6 +6200,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6955212647464466187, guid: 10ceae90f4f5f494c97dfd85f74b83fb,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10ceae90f4f5f494c97dfd85f74b83fb, type: 3}
 --- !u!1001 &1292248590985595957
@@ -6267,6 +6272,11 @@ PrefabInstance:
     - target: {fileID: 1292248591638810345, guid: 86486820b538af4448a7e3a6505b31a7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292248591638810346, guid: 86486820b538af4448a7e3a6505b31a7,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6346,7 +6356,7 @@ PrefabInstance:
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 212
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
@@ -6366,7 +6376,7 @@ PrefabInstance:
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
@@ -6376,7 +6386,7 @@ PrefabInstance:
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
@@ -6386,7 +6396,7 @@ PrefabInstance:
     - target: {fileID: 1296945853122564401, guid: d5937e1e61f368d4b858714b963f28b6,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5937e1e61f368d4b858714b963f28b6, type: 3}
@@ -6719,6 +6729,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6549298265818623505, guid: e4199ea74a8f74a44b4ea653558ce622,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4199ea74a8f74a44b4ea653558ce622, type: 3}
 --- !u!1001 &7080748655975779427
@@ -6852,6 +6867,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080748657477142086, guid: 53e08c4c692ba174ba42fb9a254b1d81,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080748657477142086, guid: 53e08c4c692ba174ba42fb9a254b1d81,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080748657477142086, guid: 53e08c4c692ba174ba42fb9a254b1d81,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080748657477142086, guid: 53e08c4c692ba174ba42fb9a254b1d81,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e08c4c692ba174ba42fb9a254b1d81, type: 3}
